@@ -5,10 +5,25 @@
  */
 import { Component } from "@angular/core";
 
+import { MovieService } from '../movie.service'
+
 @Component({
     styleUrls: ['./home.component.scss'],
     templateUrl: './home.component.html',
 })
 export class HomeComponent {
-
+    title: string;
+    results: any[] = [];
+    
+    
+    constructor(public movieService$: MovieService){
+       //this.movieService$.getMovie();
+    }
+    
+    getMovie(){
+        this.movieService$.getMovie(this.title);
+    }
+    
+    
+   
 }

@@ -6,13 +6,17 @@ import { HttpModule } from '@angular/http';
 import { ClarityModule } from 'clarity-angular';
 import { AppComponent } from './app.component';
 import { ROUTING } from "./app.routing";
+import { HttpClientModule } from '@angular/common/http';
+
 import { HomeComponent } from "./home/home.component";
-import { AboutComponent } from "./about/about.component";
+
+
+import { MovieService } from './movie.service';
+
 
 @NgModule({
     declarations: [
         AppComponent,
-        AboutComponent,
         HomeComponent
     ],
     imports: [
@@ -21,9 +25,10 @@ import { AboutComponent } from "./about/about.component";
         FormsModule,
         HttpModule,
         ClarityModule,
-        ROUTING
+        ROUTING,
+        HttpClientModule
     ],
-    providers: [],
+    providers: [MovieService],
     bootstrap: [AppComponent]
 })
 export class AppModule {
